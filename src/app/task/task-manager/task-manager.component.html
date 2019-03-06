@@ -1,0 +1,24 @@
+<h3>
+  Simple Task
+</h3>
+<b>
+  Add Task: <input type="text" autofocus [(ngModel)]='currentTask'>
+  <b></b>
+  <button (click)="addTask()">Add Task</button>
+  <br>
+  {{currentTask}}
+<br>
+Current task:
+  <ol>
+    <li *ngFor="let t of task; let taskIndex = index">
+      {{t}} &nbsp;&nbsp; <button (click)="changeTaskStatus(taskIndex)">Done</button>
+
+    </li>
+  </ol>
+  Done task:
+  <ol>
+    <li *ngFor="let t of doneTask; let taskIndex1 = index">
+      {{t}} &nbsp;&nbsp; <button (click)="UndoTaskStatus(taskIndex1)">UnDo</button>
+
+    </li>
+  </ol>
